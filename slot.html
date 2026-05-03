@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Slot | TeztecchCare</title>
+  <link rel="stylesheet" href="assets/css/consolidated.css" />
+</head>
+<body class="page-index">
+  <section class="search-section">
+    <h2>Consultation Slot Confirmed</h2>
+    <p id="slotText">Your slot request has been captured.</p>
+    <p><a href="doctor consult.html">Back to Doctor Consult</a> | <a href="index.html">Go to Home</a></p>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const doctorId = params.get("doctor");
+    const slotText = document.getElementById("slotText");
+    if (doctorId) {
+      slotText.textContent = `Your slot request has been captured for Doctor ${doctorId}.`;
+      localStorage.setItem("doctorId", doctorId);
+    }
+  </script>
+</body>
+</html>

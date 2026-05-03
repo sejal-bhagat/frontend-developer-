@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pediatrician</title>
+  <link rel="stylesheet" href="assets/css/consolidated.css">
+</head>
+<body class="page-doctor-list">
+
+<h2 class="page-title">Consult a Pediatrician</h2>
+
+<div class="doctor-card">
+  <img src="assets/images/doctor20.png">
+  <div>
+    <h3>Dr. Amit Verma</h3>
+    <p>Pediatrician • 6+ Years</p>
+    <p>Child Care Specialist</p>
+    <div class="price">₹249</div>
+    <button onclick="selectPediatrician(1)">Select Slot</button>
+  </div>
+</div>
+<div class="doctor-card">
+    <img src="assets/images/doctor21.png">
+    <div class="doctor-info">
+      <h3>Dr. Pooja Malhotra</h3>
+      <p>Pediatrician • 9+ Years</p>
+      <p>Newborn & Infant Care</p>
+      <div class="price">₹349</div>
+      <button onclick="selectPediatrician(2)">Select Slot</button>
+    </div>
+  </div>
+
+  <div class="doctor-card">
+    <img src="assets/images/doctor22.png">
+    <div class="doctor-info">
+      <h3>Dr. Rakesh Singh</h3>
+      <p>Pediatrician • 12+ Years</p>
+      <p>Child Nutrition & Growth</p>
+      <div class="price">₹399</div>
+      <button onclick="selectPediatrician(3)">Select Slot</button>
+    </div>
+  </div>
+
+  <div class="doctor-card">
+    <img src="assets/images/doctor23.png">
+    <div class="doctor-info">
+      <h3>Dr. Nidhi Jain</h3>
+      <p>Pediatrician • 7+ Years</p>
+      <p>Vaccination Specialist</p>
+      <div class="price">₹279</div>
+      <button onclick="selectPediatrician(4)">Select Slot</button>
+    </div>
+  </div>
+
+  <div class="doctor-card">
+    <img src="assets/images/doctor24.png">
+    <div class="doctor-info">
+      <h3>Dr. Sandeep Rao</h3>
+      <p>Pediatrician • 10+ Years</p>
+      <p>Child Allergy & Asthma</p>
+      <div class="price">₹369</div>
+      <button onclick="selectPediatrician(5)">Select Slot</button>
+    </div>
+  </div>
+
+  <div class="doctor-card">
+    <img src="assets/images/doctor25.png">
+    <div class="doctor-info">
+      <h3>Dr. Meera Joshi</h3>
+      <p>Pediatrician • 8+ Years</p>
+      <p>Adolescent Health</p>
+      <div class="price">₹329</div>
+      <button onclick="selectPediatrician(6)">Select Slot</button>
+    </div>
+  </div>
+<script>
+function selectPediatrician(id){
+  localStorage.setItem("pediatricianId", id);
+  window.location.href = "slot4.html";
+}
+</script>
+
+<script>
+window.addEventListener("load", function(){
+
+    const cards = document.querySelectorAll(".doctor-card");
+
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add("show");
+        }, index * 800); // 800ms delay each card
+    });
+
+});
+</script>
+
+
+</body>
+</html>

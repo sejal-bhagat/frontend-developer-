@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>General Physician</title>
+  <link rel="stylesheet" href="assets/css/consolidated.css">
+</head>
+<body class="page-doctor-list">
+
+<h2 class="page-title">Select a Doctor for General Health</h2>
+
+
+<div class="doctor-card">
+  <img src="assets/images/doctor1.png">
+  <div>
+    <h3>Dr. Shafiullah Baig</h3>
+    <p>General Physician • 5+ Years</p>
+    <p>Hindi, English</p>
+    <div class="price">₹199</div>
+    <button onclick="location.href='slot.html?doctor=1'">Select Slot</button>
+  </div>
+</div>
+ <div class="doctor-card">
+    <img src="assets/images/doctor2.png">
+    <div class="doctor-info">
+      <h3>Dr. Anjali Sharma</h3>
+      <p>General Physician • 8+ Years</p>
+      <p>Hindi, English</p>
+      <div class="price">₹299</div>
+     <button onclick="location.href='slot.html?doctor=2'">Select Slot</button>
+    </div>
+  </div>
+
+  <div class="doctor-card">
+    <img src="assets/images/doctor3.png">
+    <div class="doctor-info">
+      <h3>Dr. Rahul Verma</h3>
+      <p>General Physician • 10+ Years</p>
+      <p>English, Marathi</p>
+      <div class="price">₹399</div>
+      <button onclick="location.href='slot.html?doctor=3'">Select Slot</button>
+    </div>
+  </div>
+  <div class="doctor-card">
+  <img src="assets/images/doctor4.png">
+  <div class="doctor-info">
+    <h3>Dr. Neha Kulkarni</h3>
+    <p>General Physician • 6+ Years</p>
+    <p>Hindi, English, Marathi</p>
+    <div class="price">₹249</div>
+    <button onclick="location.href='slot.html?doctor=4'">Select Slot</button>
+  </div>
+</div>
+
+<div class="doctor-card">
+  <img src="assets/images/doctor5.png">
+  <div class="doctor-info">
+    <h3>Dr. Amit Patel</h3>
+    <p>General Physician • 9+ Years</p>
+    <p>Hindi, English, Gujarati</p>
+    <div class="price">₹349</div>
+    <button onclick="location.href='slot.html?doctor=5'">Select Slot</button>
+  </div>
+</div>
+
+<div class="doctor-card">
+  <img src="assets/images/doctor6.png">
+  <div class="doctor-info">
+    <h3>Dr. Pooja Nair</h3>
+    <p>General Physician • 7+ Years</p>
+    <p>English, Hindi, Malayalam</p>
+    <div class="price">₹299</div>
+    <button onclick="location.href='slot.html?doctor=6'">Select Slot</button>
+  </div>
+</div>
+<script>
+window.addEventListener("load", function(){
+
+    const cards = document.querySelectorAll(".doctor-card");
+
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add("show");
+        }, index * 800); // 800ms delay each card
+    });
+
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Prescription - Teztecch</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #00332e; /* Dark green background like your site */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+        }
+        .left-card {
+            flex: 1;
+            padding: 30px;
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .right-card {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        h2 { color: #222; margin-top: 0; }
+        .time-tag { color: #10847e; font-weight: bold; margin-bottom: 20px; display: block; }
+        
+        /* Upload Button Style */
+        .upload-btn {
+            width: 100%;
+            background-color: #f1ef58; /* Yellow button */
+            color: #000;
+            padding: 15px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .upload-btn:hover { background-color: #dcd94a; }
+
+        /* Preview Box */
+        #previewContainer {
+            display: none;
+            margin-top: 15px;
+            text-align: center;
+            border: 2px dashed #10847e;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        #prescriptionPreview {
+            max-width: 100%;
+            height: 150px;
+            border-radius: 5px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        .btn-group { display: flex; gap: 10px; margin-top: 10px; }
+        .remove-btn { flex: 1; background: #ff4d4d; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; }
+        .confirm-btn { flex: 1; background: #10847e; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        
+        /* Phone Input Style */
+        .phone-field {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline-color: #10847e;
+        }
+        .label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #444;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="left-card">
+        <h2>Enjoy Easy and hassle free ordering</h2>
+        <span class="time-tag">In just 5 mins</span>
+
+        <form action="/submit" method="POST" enctype="multipart/form-data" id="uploadForm">
+            <label class="label">Phone Number</label>
+            <input type="tel" name="phone" placeholder="Enter your phone number" required class="phone-field">
+
+            <label class="label">Prescription Image</label>
+            <input type="file" name="prescription" id="fileInput" accept="image/*" style="display: none;" onchange="handleFileUpload()" required>
+            
+            <button type="button" id="uploadBtn" onclick="document.getElementById('fileInput').click()" class="upload-btn">
+                ⬆️ Upload Prescription
+            </button>
+
+            <div id="previewContainer">
+                <p style="color: #10847e; font-weight: bold;">✅ Selected!</p>
+                <img id="prescriptionPreview" src="#" alt="Preview">
+                <p id="fileName" style="font-size: 12px; color: #666;"></p>
+                
+                <div class="btn-group">
+                    <button type="button" onclick="resetUpload()" class="remove-btn">Remove</button>
+                    <button type="submit" class="confirm-btn">Confirm Order</button>
+                </div>
+            </div>
+        </form>
+
+        <p style="color: #10847e; font-size: 14px; margin-top: 20px; text-align: center;">
+            Upto 25%* discount on every order
+        </p>
+    </div>
+
+    <div class="right-card">
+        <h3>How will the Pharmacist help you?</h3>
+        <ul style="line-height: 2;">
+            <li>Check items on prescription and add to cart</li>
+            <li>You can ask for additional items</li>
+            <li>Apply best coupon & max savings</li>
+            <li>Choose earliest delivery date</li>
+            <li>Share payment method options</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function handleFileUpload() {
+        const fileInput = document.getElementById('fileInput');
+        const previewContainer = document.getElementById('previewContainer');
+        const previewImage = document.getElementById('prescriptionPreview');
+        const fileName = document.getElementById('fileName');
+        const uploadBtn = document.getElementById('uploadBtn');
+
+        if (fileInput.files && fileInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                previewImage.src = e.target.result;
+                fileName.innerText = fileInput.files[0].name;
+                previewContainer.style.display = 'block';
+                uploadBtn.style.display = 'none';
+            }
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    }
+
+    function resetUpload() {
+        document.getElementById('fileInput').value = "";
+        document.getElementById('previewContainer').style.display = 'none';
+        document.getElementById('uploadBtn').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>

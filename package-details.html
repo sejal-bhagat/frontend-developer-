@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Package Details</title>
+<link rel="stylesheet" href="assets/css/consolidated.css">
+</head>
+
+<body class="page-package">
+
+<div class="page">
+
+  <!-- MAIN LAYOUT -->
+  <div class="container">
+
+    <div class="left-section">
+      <div class="main-card">
+        <p class="orders">9063+ orders placed in your location</p>
+        <h2>Comprehensive Plus Full Body Checkup</h2>
+
+        <div class="price-section">
+          <span class="price">₹1199</span>
+          <span class="mrp">₹4899</span>
+          <span class="off">75% OFF</span>
+        </div>
+
+        <p class="saving">You’re saving ₹1000 with a pre-applied coupon!</p>
+        <div class="slot">⚡ EXPRESS SLOT Available at 17-02-2026 06:00</div>
+      </div>
+
+      <div class="details-card">
+        <div class="detail"><span>Tests</span><span>Includes 90 tests</span></div>
+        <div class="detail"><span>Reports Within</span><span>14 Hrs</span></div>
+        <div class="detail"><span>Sample</span><span>Blood, Urine</span></div>
+        <div class="detail"><span>Fasting</span><span>8-10 Hrs</span></div>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <div class="most-booked">
+        <h3>Most Booked Package</h3>
+        <div class="offer-box">
+          <p><b>Healthy 2026 Full Body Checkup</b></p>
+          <p>Includes 90 tests</p>
+          <p>Reports in 60 hrs</p>
+          <h4>₹1449 <span>₹3599</span></h4>
+          <button>View Details</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PEOPLE ALSO BOOKED -->
+  <section class="people-booked">
+    <h2>People Also Booked</h2>
+
+    <div class="people-row">
+
+      <!-- FIXED INFO CARD -->
+      <div class="info-card">
+        <div class="icon">👥</div>
+        <p>Explore other popular choices for your health and wellness journey</p>
+      </div>
+
+      <!-- SLIDER -->
+      <div class="slider-wrapper">
+        <button class="arrow left" onclick="scrollCards(-1)">‹</button>
+
+        <div class="cards" id="cards">
+          <div class="card">
+            <h4>Winter Fever Package - Basic</h4>
+            <p>Includes 30 tests</p>
+            <p><b>₹699</b> <s>₹2499</s> <span class="off">72% OFF</span></p>
+            <button>View Details</button>
+          </div>
+
+          <div class="card">
+            <h4>Women's Weight Management</h4>
+            <p>Includes 42 tests</p>
+            <p><b>₹1199</b> <s>₹3549</s> <span class="off">66% OFF</span></p>
+            <button>View Details</button>
+          </div>
+
+          <div class="card">
+            <h4>Anaemia Care Health Checkup</h4>
+            <p>Includes 60 tests</p>
+            <p><b>₹1199</b> <s>₹3549</s> <span class="off">66% OFF</span></p>
+            <button>View Details</button>
+          </div>
+        </div>
+
+        <button class="arrow right" onclick="scrollCards(1)">›</button>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+const cards = document.getElementById("cards");
+function scrollCards(dir) {
+  cards.scrollBy({ left: dir * 320, behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>

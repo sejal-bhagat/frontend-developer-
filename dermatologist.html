@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dermatologist</title>
+<link rel="stylesheet" href="assets/css/consolidated.css">
+</head>
+
+<body class="page-doctor-list">
+
+<h2 class="page-title">Consult a Dermatologist</h2>
+
+<div class="doctor-card">
+<img src="assets/images/doctor7.png">
+<div>
+<h3>Dr. Ria Sharma</h3>
+<p>Dermatologist • 7+ Years</p>
+<p>Skin & Hair Specialist</p>
+<div class="price">₹299</div>
+<button onclick="selectDoctor(1)">Select Slot</button>
+</div>
+</div>
+
+<div class="doctor-card">
+<img src="assets/images/doctor8.png">
+<div>
+<h3>Dr. Ayesha Khan</h3>
+<p>Dermatologist • 5+ Years</p>
+<p>Acne & Allergy Specialist</p>
+<div class="price">₹249</div>
+<button onclick="selectDoctor(2)">Select Slot</button>
+</div>
+</div>
+
+<div class="doctor-card">
+<img src="assets/images/doctor9.png">
+<div>
+<h3>Dr. Kunal Mehta</h3>
+<p>Dermatologist • 10+ Years</p>
+<p>Cosmetic Dermatology</p>
+<div class="price">₹399</div>
+<button onclick="selectDoctor(3)">Select Slot</button>
+</div>
+</div>
+<!-- Doctor 4 -->
+<div class="doctor-card">
+  <img src="assets/images/doctor10.png">
+
+  <div>
+    <h3>Dr. Sneha Iyer</h3>
+    <p>Dermatologist • 8+ Years</p>
+    <p>Hair Fall & Scalp Care</p>
+    <div class="price">₹349</div>
+
+    <button onclick="selectDoctor(4)">Select Slot</button>
+  </div>
+</div>
+
+
+<!-- Doctor 5 -->
+<div class="doctor-card">
+  <img src="assets/images/doctor11.png">
+
+  <div>
+    <h3>Dr. Arjun Malhotra</h3>
+    <p>Dermatologist • 6+ Years</p>
+    <p>Psoriasis & Eczema</p>
+    <div class="price">₹279</div>
+
+    <button onclick="selectDoctor(5)">Select Slot</button>
+  </div>
+</div>
+
+
+<!-- Doctor 6 -->
+<div class="doctor-card">
+  <img src="assets/images/doctor12.png">
+
+  <div>
+    <h3>Dr. Pooja Desai</h3>
+    <p>Dermatologist • 9+ Years</p>
+    <p>Laser & Aesthetic Skin</p>
+    <div class="price">₹369</div>
+
+    <button onclick="selectDoctor(6)">Select Slot</button>
+  </div>
+</div>
+
+
+<script>
+function selectDoctor(id){
+localStorage.setItem("doctorId", id);
+window.location.href="slot1.html";
+}
+</script>
+
+<script>
+window.addEventListener("load", function(){
+
+    const cards = document.querySelectorAll(".doctor-card");
+
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add("show");
+        }, index * 800); // 800ms delay each card
+    });
+
+});
+</script>
+
+
+</body>
+</html>
